@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "2004:2004"
+    environment:
+      - PORT=2004
+    command: npx nodemon index.js
