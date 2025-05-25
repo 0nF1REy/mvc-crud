@@ -9,3 +9,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 2004
+
+CMD ["npm", "start"]
