@@ -7,7 +7,7 @@ router.get('/', tasksController.getAllTasks);
 
 router.post('/', tasksController.postTask);
 
-router.put('/', tasksController.putTask);
+router.put('/:id_task', tasksController.putTask);
 
 router.delete('/:id_task', tasksController.deleteTask);
 

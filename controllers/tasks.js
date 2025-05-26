@@ -32,7 +32,10 @@ exports.postTask = async (req, res, next) => {
 
 exports.putTask = async (req, res, next) => {
     try {
-        const result = await Tasks.update(req.body.id_task, req.body.task);
+        const id_task = req.params.id_task;
+        const task = req.body.task;
+
+        const result = await Tasks.update(id_task, task);
         res.status(200).json({ message: 'Tarefa atualizada com sucesso', result });
     } catch (err) {
         if (!err.statusCode) {
